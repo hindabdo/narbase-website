@@ -1,37 +1,48 @@
 allprojects {
-    version = "1.0.0"
-
-    repositories {
-        maven(url = "https://dl.bintray.com/kotlin/kotlin-dev/")
-        maven(url = "https://dl.bintray.com/kotlin/kotlinx/")
-        maven(url = "https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven/")
-        mavenCentral()
-    }
+    group = "com.narbase"
+    version = "1.0.7"
 }
 
 plugins {
-    kotlin("jvm") version "1.7.10" apply false
-    kotlin("js") version "1.7.10" apply false
-    kotlin("multiplatform") version "1.7.10" apply false
+    id("org.jetbrains.kotlin.multiplatform") version "1.4.32" apply false
+    kotlin("jvm") version "1.4.32" apply false
+    kotlin("js") version "1.4.32" apply false
 }
 
-tasks.register("buildRelease") {
-    val outputJarName = "narcore"
-    val serverProjectName = "narcore-server"
-    val webProjectName = "narcore-web"
-    dependsOn(":$serverProjectName:jar")
-    dependsOn(":$webProjectName:build")
+
+tasks.register("buildSsr") {
+    dependsOn(":bos-server:jar")
+    dependsOn(":bos-web:build")
     doLast {
-        println("Building release")
+        println("Building SSR")
         val releaseDir = File("./releases/$version/")
-        val webReleaseDir = File("./releases/$version/web/")
+        val publicReleaseDir = File("./releases/$version/public/")
+        val webReleaseDir = File("./releases/$version/public/js/client/")
         releaseDir.deleteRecursively()
         releaseDir.mkdirs()
+        publicReleaseDir.mkdirs()
         webReleaseDir.mkdirs()
-        File("./$webProjectName/build/distributions/").copyRecursively(webReleaseDir, overwrite = true)
-        File("./$serverProjectName/build/libs/$serverProjectName-$version.jar").copyTo(
-            File("${releaseDir.path}/$outputJarName.jar"),
+        File("./public").copyRecursively(publicReleaseDir, overwrite = true)
+        webReleaseDir.deleteRecursively()
+        File("./bos-web/build/distributions/").copyRecursively(webReleaseDir, overwrite = true)
+        File("./bos-server/build/libs/bos-server-$version.jar").copyTo(
+            File("${releaseDir.path}/bos-server.jar"),
             overwrite = true
         )
     }
+}
+tasks.register("deploySsr") {
+    dependsOn("buildSsr")
+    doLast {
+        exec {
+            workingDir = File("$projectDir/releases/")
+            executable = "$projectDir/releases/deploy.sh"
+            args = listOf("$version")
+        }
+    }
+}
+
+tasks.register("runDev") {
+    dependsOn(":bos-server:build")
+    dependsOn(":bos-web:run")
 }

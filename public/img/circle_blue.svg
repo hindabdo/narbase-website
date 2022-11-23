@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="34.159mm" height="34.893mm" version="1.1" viewBox="0 0 34.159 34.893" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="filter139931" x="-.084789" y="-.084789" width="1.1696" height="1.1696" color-interpolation-filters="sRGB">
+   <feGaussianBlur stdDeviation="3.3198201"/>
+  </filter>
+ </defs>
+ <g transform="translate(-124.84 -92.461)">
+  <circle transform="matrix(.30461 0 0 .30461 38.963 45.548)" cx="339.12" cy="213.61" r="46.985" filter="url(#filter139931)" opacity=".45057" style="mix-blend-mode:normal"/>
+  <circle cx="140.79" cy="108.41" r="15.946" fill="#495f7c"/>
+ </g>
+</svg>

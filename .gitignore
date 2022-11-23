@@ -1,12 +1,7 @@
 .idea/
 .gradle/
-build/
-out/
-backups/
-currentMigrationVersion
-currentPid
-lastFailedAppVersion
-temp_err.log
-/web/
-remoteClinicsBackups/
-log/
+/build
+/node_modules
+/narsite-web/build/
+/narsite-server/build/
+/narsite-common/build/

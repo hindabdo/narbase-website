@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        width="159.20239mm"
+        height="166.18613mm"
+        viewBox="0 0 159.20239 166.18613"
+        version="1.1"
+        id="svg770"
+        inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+        sodipodi:docname="circle_blue_transparent.svg"
+        xmlns="http://www.w3.org/2000/svg"
+>
+  <sodipodi:namedview
+          id="namedview772"
+          pagecolor="#ffffff"
+          bordercolor="#cccccc"
+          borderopacity="1"
+          inkscape:showpageshadow="0"
+          inkscape:pageopacity="1"
+          inkscape:pagecheckerboard="0"
+          inkscape:deskcolor="#d1d1d1"
+          inkscape:document-units="mm"
+          showgrid="false"
+          inkscape:zoom="0.71000843"
+          inkscape:cx="123.94219"
+          inkscape:cy="332.39042"
+          inkscape:window-width="1920"
+          inkscape:window-height="1022"
+          inkscape:window-x="0"
+          inkscape:window-y="0"
+          inkscape:window-maximized="1"
+          inkscape:current-layer="layer1"/>
+  <defs
+          id="defs767"/>
+  <g
+          inkscape:label="Layer 1"
+          inkscape:groupmode="layer"
+          id="layer1"
+          transform="translate(-24.852195,-35.203551)">
+    <ellipse
+            id="Oval-0-3"
+            stroke="#b6e7e7"
+            stroke-width="26.4583"
+            fill="#b6e7e7"
+            opacity="0.221098"
+            cx="104.45339"
+            cy="114.97036"
+            style="fill-rule:evenodd"
+            rx="66.372047"
+            ry="66.537659"/>
+    <ellipse
+            id="Oval-Copy-2-5"
+            fill="#b6e7e7"
+            cx="81.498055"
+            cy="190.23119"
+            style="fill-rule:evenodd;stroke:none;stroke-width:0.264583"
+            rx="11.130715"
+            ry="11.158489"/>
+  </g>
+</svg>

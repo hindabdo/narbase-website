@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="182.65172mm"
+   height="32.975349mm"
+   viewBox="0 0 182.65172 32.975349"
+   version="1.1"
+   id="svg5184"
+   sodipodi:docname="products-back-2.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5186"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.4968564"
+     inkscape:cx="357.74975"
+     inkscape:cy="62.130209"
+     inkscape:window-width="1920"
+     inkscape:window-height="1026"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs5181" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-19.62023,-47.182415)">
+    <g
+       id="g957"
+       inkscape:export-filename="/mnt/Narbase/Projects/BalsamSites/Docs/products-background.jpeg"
+       inkscape:export-xdpi="267"
+       inkscape:export-ydpi="267"
+       transform="translate(193.39725,-45.395348)">
+      <path
+         style="fill:#e6fafa;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -173.77702,125.54125 c 31.32087,0.54471 84.550899,-17.85381 119.659945,-17.3067 27.817865,0.43349 42.110253,17.30353 62.9917698,17.3067 V 111.24503 C -5.5325074,105.79239 -33.49829,99.355171 -51.504115,98.965904 c -17.101221,-0.36971 -67.676195,14.660166 -78.769945,15.545726 -2.67253,0.21333 -23.5817,2.66192 -43.50296,-3.3393 z"
+         id="path871"
+         sodipodi:nodetypes="csccsscc"
+         inkscape:export-filename="/mnt/Narbase/Projects/BalsamSites/Docs/products-back-1.png"
+         inkscape:export-xdpi="267"
+         inkscape:export-ydpi="267" />
+    </g>
+  </g>
+</svg>

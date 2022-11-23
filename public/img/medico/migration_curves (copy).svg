@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+        id="c-b"
+        width="322.24963mm"
+        height="70.908463mm"
+        style="width: 100%;"
+        version="1.1"
+        viewBox="0 0 322.24963 70.908464"
+        xmlns="http://www.w3.org/2000/svg"
+>
+  <defs
+          id="defs8"/>
+  <path
+          class="migration-curve"
+          id="c-c"
+          d="M 0.03417939,64.783321 C 71.695625,11.003058 253.41373,3.1128627 322.08373,64.592863"
+          fill="none"
+          stroke="#a7a7a7"
+          stroke-dasharray="1, 1"
+          stroke-width="0.5"/>
+  <path
+          class="migration-curve"
+          id="c-d"
+          d="M 0.03417939,64.783321 C 63.380811,-15.853537 253.41373,-24.685137 322.08373,64.592863"
+          fill="none"
+          stroke="#a7a7a7"
+          stroke-dasharray="1, 1"
+          stroke-width="0.5"/>
+  <path
+          class="migration-curve"
+          id="c-e"
+          d="M 0.03417939,64.783321 C 86.580142,37.226102 253.41373,39.184463 322.08373,64.592863"
+          fill="none"
+          stroke="#a7a7a7"
+          stroke-dasharray="0.999998, 0.999998"
+          stroke-width="0.5"/>
+</svg>

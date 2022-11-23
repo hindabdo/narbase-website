@@ -1,0 +1,80 @@
+buildscript {
+    ext.kotlin_version = '1.4.32'
+    ext.ktor_version = '1.4.0'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+repositories {
+    jcenter()
+}
+
+
+group 'com.narbase.bos.server'
+
+sourceCompatibility = 1.8
+kotlin { experimental { coroutines "enable" } }
+
+mainClassName = "com.narbase.narnic.main.MainKt"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation(project(":narsite-common"))
+    implementation "com.narbase.kunafa:core:0.3.0-beta.7"
+    implementation "io.ktor:ktor-server-core:$ktor_version"
+    implementation "io.ktor:ktor-server-netty:$ktor_version"
+    implementation "ch.qos.logback:logback-classic:1.2.5"
+
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions {
+        languageVersion = "1.4"
+        freeCompilerArgs = ["-XXLanguage:+InlineClasses"]
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin/'
+    test.java.srcDirs += 'src/test/kotlin/'
+}
+jar {
+    manifest {
+        attributes "Main-Class": "com.narbase.narnic.main.MainKt"
+        attributes "Class-Path": "."
+    }
+
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

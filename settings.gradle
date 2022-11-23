@@ -1,0 +1,8 @@
+rootProject.name ='narsite'
+include 'common'
+include 'trial-flow'
+include 'narsite-server'
+include 'narsite-web'
+include 'narsite-common'
+
+

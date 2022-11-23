@@ -1,0 +1,41 @@
+
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform'
+}
+
+ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
+def deployVersion = "0.1.0"
+
+group 'com.narbase.bos.common'
+version = deployVersion
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+
+dependencies {
+    commonMainImplementation("com.narbase.kunafa:core:0.3.0-beta.7")
+//    commonMainImplementation("com.narbase.kunafa:core:0.3.0-beta.5")
+}
+
+kotlin {
+    jvm()
+    js {
+        browser {
+        }
+    }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation kotlin('stdlib-common')
+            }
+        }
+        all {
+            languageSettings.enableLanguageFeature("InlineClasses")
+        }
+    }
+}
