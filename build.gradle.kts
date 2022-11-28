@@ -11,8 +11,8 @@ plugins {
 
 
 tasks.register("buildSsr") {
-    dependsOn(":bos-server:jar")
-    dependsOn(":bos-web:build")
+    dependsOn(":narsite-server:jar")
+    dependsOn(":narsite-web:build")
     doLast {
         println("Building SSR")
         val releaseDir = File("./releases/$version/")
@@ -24,9 +24,9 @@ tasks.register("buildSsr") {
         webReleaseDir.mkdirs()
         File("./public").copyRecursively(publicReleaseDir, overwrite = true)
         webReleaseDir.deleteRecursively()
-        File("./bos-web/build/distributions/").copyRecursively(webReleaseDir, overwrite = true)
-        File("./bos-server/build/libs/bos-server-$version.jar").copyTo(
-            File("${releaseDir.path}/bos-server.jar"),
+        File("./narsite-web/build/distributions/").copyRecursively(webReleaseDir, overwrite = true)
+        File("./narsite-server/build/libs/narsite-server-$version.jar").copyTo(
+            File("${releaseDir.path}/narsite-server.jar"),
             overwrite = true
         )
     }
@@ -43,6 +43,6 @@ tasks.register("deploySsr") {
 }
 
 tasks.register("runDev") {
-    dependsOn(":bos-server:build")
-    dependsOn(":bos-web:run")
+    dependsOn(":narsite-server:build")
+    dependsOn(":narsite-web:run")
 }

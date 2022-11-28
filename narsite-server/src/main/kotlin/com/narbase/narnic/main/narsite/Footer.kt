@@ -1,8 +1,7 @@
-package com.narbase.narnic.main.one
+package com.narbase.narnic.main.narsite
 
 import com.narbase.bos.common.Constants
 import com.narbase.bos.common.data.AppColors
-import com.narbase.bos.common.one.NarsitePageRef
 import com.narbase.kunafa.core.components.*
 import com.narbase.kunafa.core.components.layout.LinearLayout
 import com.narbase.kunafa.core.css.*

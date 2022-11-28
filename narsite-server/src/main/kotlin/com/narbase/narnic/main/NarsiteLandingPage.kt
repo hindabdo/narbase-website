@@ -12,9 +12,10 @@ import com.narbase.kunafa.core.drawable.Color
 import com.narbase.narnic.main.common.commonPageHead
 import com.narbase.narnic.main.common.fbqTrack
 import com.narbase.narnic.main.common.smoothPageScroll
-import com.narbase.narnic.main.one.landingPageFooter
-import com.narbase.narnic.main.one.landingPageHeader
+import com.narbase.narnic.main.narsite.landingPageFooter
+import com.narbase.narnic.main.narsite.landingPageHeader
 import com.narbase.narnic.main.utils.centerVertical
+import com.narbase.narnic.main.utils.horizontalFiller
 import com.narbase.narnic.main.utils.smallScreen
 
 /*
@@ -44,83 +45,106 @@ class NarsiteLandingPage {
 
 
         }
-
-
-        keyframes(page, "right-slow") {
-            from {
-                backgroundPosition = 0.vw.toString()
-            }
-            to {
-                backgroundPosition = 100.vw.toString()
-            }
+        style {
+            background = "linear-gradient(to bottom, rgba(48,48,48,1), rgba(16,16,16,1));"
         }
 
-        ref.headerView = landingPageHeader()
 
-        centerVertical {
-            verticalLayout {
-                style {
-                    width = matchParent
-                    alignItems = Alignment.Center
-                    marginTop = 72.px
-                    smallScreen {
-                        marginTop = 32.px
+//        keyframes(page, "right-slow") {
+//            from {
+//                backgroundPosition = 0.vw.toString()
+//            }
+//            to {
+//                backgroundPosition = 100.vw.toString()
+//            }
+//        }
+        verticalLayout {
+            style {
+                width = 100.vw
+                background = "linear-gradient(to bottom, rgba(48,48,48,1), rgba(16,16,16,1));"
+            }
+
+            ref.headerView = landingPageHeader()
+
+            centerVertical {
+
+                verticalLayout {
+                    style {
+                        width = matchParent
+                        alignItems = Alignment.Center
+                        smallScreen {
+                            marginTop = 32.px
+                        }
                     }
+
+                    topSection(ref)
                 }
-
-                headerSection(ref)
             }
-        }
-        centerVertical {
 
+            landingPageFooter()
         }
-
-        landingPageFooter()
 
     }
 
-    private fun LinearLayout.headerSection(ref: NarsitePageRef) {
-        h1 {
-            style {
-                textAlign = TextAlign.Center
-                fontSize = 48.px
-                color = Color.black
-                fontStyle = "bold"
-                fontWeight = "700"
-                padding = 16.px
-                smallScreen {
-                    padding = 24.px
-                    textAlign = TextAlign.Left
-                }
-            }
-            text = "Narbase"
-        }
-
+    private fun LinearLayout.topSection(ref: NarsitePageRef) {
         textView {
             style {
-                maxWidth = 620.px
-                marginTop = 32.px
-                fontSize = 18.px
-                fontWeight = "300"
-                lineHeight = "1.5"
-                color = AppColors.textDarkerGrey
+                marginTop = 100.px
                 textAlign = TextAlign.Center
-                padding = 16.px
+                fontSize = 18.px
+                color = Color.white
+                fontWeight = "300"
+                opacity = 0.7
                 smallScreen {
-                    maxWidth = 100.vw
-                    padding = 24.px
+                    padding = 8.px
                     textAlign = TextAlign.Left
-                    marginTop = 12.px
                 }
             }
-            text =
-                ""
+            text = "SEARCHING FOR A"
+        }
+        horizontalLayout {
+            textView {
+                style {
+                    color = AppColors.narbaseRedColor
+                    fontWeight = "bold"
+                    fontSize = 48.px
+                }
+                text = "GREAT"
+            }
+            horizontalFiller(8.px)
+            textView {
+                style {
+                    color = AppColors.white
+                    fontSize = 48.px
+                }
+                text = "SOFTWARE"
+            }
+        }
+        textView {
+            style {
+                textAlign = TextAlign.Center
+                fontSize = 24.px
+                color = Color.white
+                fontWeight = "300"
+                padding = 8.px
+                smallScreen {
+                    padding = 8.px
+                    textAlign = TextAlign.Left
+                }
+            }
+            text = "THAT TAKES YOUR BUSINESS"
         }
 
+        imageView {
+            style {
+                maxWidth = 50.vw
+            }
+            attributes["src"] = "/public/img/top-laptop.png"
+        }
         a {
             ref.getStartedButton = button {
                 style {
-                    backgroundColor = AppColors.balsamColor
+                    backgroundColor = AppColors.narbaseRedColor
                     marginTop = 32.px
                     borderRadius = 6.px
                     paddingRight = 24.px
@@ -130,7 +154,7 @@ class NarsiteLandingPage {
                     text = "Get in touch"
                     border = "none"
                     color = AppColors.white
-                    borderColor = AppColors.balsamColor
+                    borderColor = AppColors.narbaseRedColor
                     boxShadow = "none"
                     fontSize = 16.px
                     cursor = "pointer"
@@ -140,5 +164,20 @@ class NarsiteLandingPage {
         }
     }
 
+    private fun LinearLayout.topTabsView() = horizontalLayout {
+        style {
+            width = matchParent
+        }
+        imageView {
+            style {
+                height = 50.px
+            }
+            attributes["src"] = "/public/img/narbase-logo.svg"
+        }
+        horizontalFiller()
+        textView {
+
+        }
+    }
 
 }

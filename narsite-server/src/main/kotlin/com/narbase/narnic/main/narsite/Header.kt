@@ -1,8 +1,7 @@
-package com.narbase.narnic.main.one
+package com.narbase.narnic.main.narsite
 
 import com.narbase.bos.common.Constants
 import com.narbase.bos.common.data.AppColors
-import com.narbase.bos.common.one.NarsitePageRef
 import com.narbase.kunafa.core.components.*
 import com.narbase.kunafa.core.css.*
 import com.narbase.kunafa.core.dimensions.dependent.matchParent
@@ -32,18 +31,14 @@ fun View.landingPageHeader() =
             alignItems = Alignment.Center
             position = "sticky"
             top = 0.px
-            backgroundColor = Color.white
             zIndex = 100
         }
-
-        conferenceHeader()
 
         horizontalLayout {
             style {
                 width = matchParent
                 padding = 8.px
                 alignItems = Alignment.Center
-                backgroundColor = Color.white
                 zIndex = 100
                 flexWrap = "wrap"
             }
@@ -61,7 +56,7 @@ fun View.landingPageHeader() =
                     href = "/"
                     imageView {
                         style {
-                            height = 56.px
+                            height = 32.px
                             mediumScreen {
                                 height = 46.px
                             }
@@ -69,7 +64,7 @@ fun View.landingPageHeader() =
                                 height = 32.px
                             }
                         }
-                        attributes["src"] = "/public/img/balsam-one.png"
+                        attributes["src"] = "/public/img/narbase-logo.svg"
                     }
                 }
             }
@@ -78,6 +73,7 @@ fun View.landingPageHeader() =
 
             nav() withHorizontalLayout {
                 style {
+                    alignItems = Alignment.Center
                     smallScreen {
                         width = weightOf(1)
                         alignItems = Alignment.Center
@@ -85,6 +81,9 @@ fun View.landingPageHeader() =
                     }
                 }
 
+                menuLink("Home", "")
+                menuLink("Portfolio", "")
+                menuLink("Blog", "")
                 horizontalFiller(8)
                 a {
                     style {
@@ -93,42 +92,46 @@ fun View.landingPageHeader() =
                         }
                     }
                     button {
-                        text = "GET STARTED"
+                        text = "Get in touch"
                         style {
-                            backgroundColor = AppColors.balsamColor
+                            backgroundColor = AppColors.narbaseRedColor
                             borderRadius = 6.px
-                            paddingRight = 24.px
-                            paddingLeft = 24.px
-                            paddingTop = 12.px
-                            paddingBottom = 12.px
+                            paddingRight = 12.px
+                            paddingLeft = 12.px
+                            paddingTop = 4.px
+                            paddingBottom = 4.px
                             border = "none"
                             color = AppColors.white
-                            borderColor = AppColors.balsamColor
+                            borderColor = AppColors.narnicDarkColor
                             boxShadow = "none"
                             fontSize = 14.px
                             cursor = "pointer"
                         }
                     }
-                    href = Constants.GETTING_STARTED_LINK
+//                    href = Constants.GETTING_STARTED_LINK
                 }
 
             }
         }
     }
 
-private fun CustomView.conferenceHeader() {
-    val conferenceDate = SimpleDateFormat("dd/MM/yyyy").parse("16/12/2022")
-    if (Date().after(conferenceDate)) return
-    horizontalLayout {
+
+fun View.menuLink(title: String, hrefLink: String) = a {
+    style {
+        textDecoration = "none"
+    }
+    href = hrefLink
+    textView {
+        text = title
         style {
-            width = matchParent
-            padding = 8.px
-            alignItems = Alignment.Center
-            justifyContent = JustifyContent.Center
-            backgroundColor = AppColors.balsamColor
-            zIndex = 100
-            flexWrap = "wrap"
+            padding = 12.px
+            fontSize = 14.px
+            cursor = "pointer"
+            color = Color.white
+            hover {
+//                backgroundColor = AppColors.extraLightBackground
+                textDecoration = "underline"
+            }
         }
     }
 }
-
