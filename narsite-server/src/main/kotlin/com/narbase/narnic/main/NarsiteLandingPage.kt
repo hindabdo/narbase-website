@@ -107,6 +107,8 @@ class NarsiteLandingPage {
                         backgroundColor = AppColors.narbaseGreyColor
                     }
                     aboutSection()
+                    verticalFiller(200.px)
+                    whatWeDoView()
                 }
                 landingPageFooter()
             }
@@ -335,7 +337,7 @@ class NarsiteLandingPage {
                     text =
                         "\"Driven by a deep understanding of hardware and a passion for clean code, our expert team is fully capable of building fast, reliable and responsive software that will help grow your business and stay in contol of your brand.\""
                 }
-                verticalFiller(16.px)
+                verticalFiller(32.px)
                 textView {
                     style {
                         fontSize = 14.px
@@ -410,6 +412,108 @@ class NarsiteLandingPage {
                 height = 64.px
             }
             attributes["src"] = "/public/img/bok-grey.png"
+        }
+    }
+
+    private fun View.whatWeDoView() = verticalLayout {
+        style {
+            backgroundImage = "url(/public/img/background-tech.png)"
+            width = matchParent
+            alignItems = Alignment.Center
+            backgroundSize = "contain"
+            backgroundRepeat = "no-repeat"
+            alignSelf = Alignment.Center
+        }
+        textView {
+            style {
+                fontSize = 48.px
+                fontWeight = "bold"
+                color = AppColors.white
+            }
+            text = "WHAT WE OFFER"
+
+        }
+
+        verticalFiller(50.px)
+
+        horizontalLayout {
+            verticalLayout {
+                offerView(
+                    "/public/img/code-icon.png",
+                    "Software development",
+                    "Now it is our time to let you step aside and do the rest. We will be working hard on bringing your vision to life."
+                )
+                offerView(
+                    "/public/img/ux-icon.png",
+                    "USER EXPERIENCE DESIGN",
+                    "Creating a good UI/UX is vital for your app. Many useful apps go unrecognized because of their bad user experience. Designing a good user experience requires knowledge and talent. "
+                )
+            }
+            view {
+                style {
+                    height = matchParent
+                    width = 1.px
+                    backgroundColor = AppColors.white
+                }
+            }
+            verticalLayout {
+                verticalFiller(100.px)
+                offerView(
+                    "/public/img/consultancy.png",
+                    "Technical consultancy",
+                    "Need help with your application? Do not worry. We are here to help. With our long experience in the industry, we know the ins and outs of mobile app development. Our expert team is at your service to help you create your awesome app."
+                )
+                offerView(
+                    "/public/img/pay-as-you-go.png",
+                    "PAY AS YOU GO SOFTWARE",
+                    "No software is ever “finished”. To cope with the market needs, you will always need your app to have new features and support the latest technologies."
+                )
+            }
+        }
+        verticalFiller(300.px)
+    }
+
+    private fun View.offerView(icon: String, title: String, description: String) = verticalLayout {
+        style {
+            width = 30.vw
+        }
+        verticalFiller(50.px)
+        verticalLayout {
+            style {
+                padding = 32.px
+            }
+            imageView {
+                style {
+                    width = 56.px
+                }
+                attributes["src"] = icon
+            }
+            verticalFiller(12.px)
+            textView {
+                style {
+                    fontWeight = "bold"
+                    fontSize = 24.px
+                    textTransform = "uppercase"
+                    color = AppColors.white
+                }
+                text = title
+            }
+            verticalFiller(12.px)
+            textView {
+                style {
+                    fontWeight = "300"
+                    fontSize = 18.px
+                    color = AppColors.white
+                }
+                text = description
+            }
+        }
+        view {
+            style {
+                width = matchParent
+                height = 1.px
+                backgroundColor = AppColors.white
+            }
         }
     }
 
