@@ -7,6 +7,7 @@ import com.narbase.kunafa.core.components.layout.LinearLayout
 import com.narbase.kunafa.core.css.*
 import com.narbase.kunafa.core.dimensions.dependent.matchParent
 import com.narbase.kunafa.core.dimensions.dependent.weightOf
+import com.narbase.kunafa.core.dimensions.dependent.wrapContent
 import com.narbase.kunafa.core.dimensions.percent
 import com.narbase.kunafa.core.dimensions.px
 import com.narbase.kunafa.core.dimensions.vw
@@ -100,6 +101,13 @@ class NarsiteLandingPage {
                 }
 
                 newLevelSection()
+                verticalLayout {
+                    style {
+                        width = matchParent
+                        backgroundColor = AppColors.narbaseGreyColor
+                    }
+                    aboutSection()
+                }
                 landingPageFooter()
             }
 
@@ -282,6 +290,126 @@ class NarsiteLandingPage {
                 animation = "up_down 4s linear infinite"
             }
             attributes["src"] = "/public/img/code-icon.png"
+        }
+    }
+
+    private fun LinearLayout.aboutSection() = verticalLayout {
+        style {
+            width = matchParent
+            backgroundColor = AppColors.narbaseGreyColor
+            alignItems = Alignment.Center
+            justifyContent = JustifyContent.Center
+            padding = 32.px
+        }
+        horizontalLayout {
+            style {
+                width = wrapContent
+                alignSelf = Alignment.Center
+                borderRadius = 8.px
+                margin = 32.px
+                padding = 24.px
+                background = "linear-gradient(to bottom, #4C4B4B, #453D3F);"
+            }
+            imageView {
+                style {
+                    width = 100.px
+                    height = 100.px
+                    alignSelf = Alignment.Center
+                    marginStart = (-50).px
+                    border = "5px solid #4C4B4B"
+                    borderRadius = 5.px
+                }
+                attributes["src"] = "/public/img/islam.jpg"
+            }
+
+            verticalLayout {
+                style {
+                    marginStart = 24.px
+                }
+                textView {
+                    style {
+                        maxWidth = 40.vw
+                        color = AppColors.white
+                        fontWeight = "300"
+                    }
+                    text =
+                        "\"Driven by a deep understanding of hardware and a passion for clean code, our expert team is fully capable of building fast, reliable and responsive software that will help grow your business and stay in contol of your brand.\""
+                }
+                verticalFiller(16.px)
+                textView {
+                    style {
+                        fontSize = 14.px
+                        color = AppColors.white
+                        fontWeight = "bold"
+                    }
+                    text = "Islam Abdalla, Managing Partner"
+                }
+
+                verticalFiller(16.px)
+                imageView {
+                    style {
+                        height = 24.px
+                    }
+                    attributes["src"] = "/public/img/narbase-logo.svg"
+                }
+            }
+        }
+        clientsView()
+    }
+
+    private fun View.clientsView() = horizontalLayout {
+        style {
+            backgroundColor = AppColors.narbaseGreyColor
+            alignSelf = Alignment.Center
+            opacity = 0.5
+        }
+        imageView {
+            style {
+                height = 64.px
+            }
+            attributes["src"] = "/public/img/mtin.png"
+        }
+        horizontalFiller(24.px)
+        imageView {
+            style {
+                height = 64.px
+            }
+            attributes["src"] = "/public/img/orooma.png"
+        }
+        horizontalFiller(24.px)
+        imageView {
+            style {
+                height = 64.px
+            }
+            attributes["src"] = "/public/img/zain.png"
+        }
+        horizontalFiller(24.px)
+        imageView {
+            style {
+                height = 64.px
+            }
+            attributes["src"] = "/public/img/unicef.png"
+        }
+        horizontalFiller(24.px)
+        imageView {
+            style {
+                height = 64.px
+            }
+            attributes["src"] = "/public/img/pure-system.png"
+        }
+        horizontalFiller(24.px)
+        imageView {
+            style {
+                height = 64.px
+            }
+            attributes["src"] = "/public/img/carapp.png"
+        }
+        horizontalFiller(24.px)
+        imageView {
+            style {
+                height = 64.px
+            }
+            attributes["src"] = "/public/img/bok-grey.png"
         }
     }
 

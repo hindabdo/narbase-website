@@ -3,6 +3,7 @@ package com.narbase.bos.common.data
 import com.narbase.kunafa.core.drawable.Color
 
 object AppColors {
+    val narbaseGreyColor = Color("2F2F2F")
     val warning = Color("EC9730")
     val narbaseRedColor = Color("B72D45")
     val main = Color(26, 114, 157)
