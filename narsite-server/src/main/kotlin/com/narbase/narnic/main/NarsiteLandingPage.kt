@@ -5,12 +5,10 @@ import com.narbase.bos.common.one.NarsitePageRef
 import com.narbase.kunafa.core.components.*
 import com.narbase.kunafa.core.components.layout.LinearLayout
 import com.narbase.kunafa.core.css.*
+import com.narbase.kunafa.core.dimensions.*
 import com.narbase.kunafa.core.dimensions.dependent.matchParent
 import com.narbase.kunafa.core.dimensions.dependent.weightOf
 import com.narbase.kunafa.core.dimensions.dependent.wrapContent
-import com.narbase.kunafa.core.dimensions.percent
-import com.narbase.kunafa.core.dimensions.px
-import com.narbase.kunafa.core.dimensions.vw
 import com.narbase.kunafa.core.drawable.Color
 import com.narbase.narnic.main.common.commonPageHead
 import com.narbase.narnic.main.common.fbqTrack
@@ -109,6 +107,7 @@ class NarsiteLandingPage {
                     aboutSection()
                     verticalFiller(200.px)
                     whatWeDoView()
+                    suitsYourNeedsSection()
                 }
                 landingPageFooter()
             }
@@ -471,6 +470,74 @@ class NarsiteLandingPage {
             }
         }
         verticalFiller(300.px)
+    }
+
+    private fun View.suitsYourNeedsSection() = verticalLayout {
+        style {
+            backgroundImage = "url(/public/img/background-tech.png)"
+            width = matchParent
+            alignItems = Alignment.Center
+            backgroundSize = "contain"
+            backgroundRepeat = "no-repeat"
+            alignSelf = Alignment.Center
+        }
+        textView {
+            style {
+                fontSize = 32.px
+                color = AppColors.white
+            }
+            text = "WE DEVELOP A SOFTWARE THAT SUITS YOUR NEEDS"
+
+        }
+
+        verticalFiller(50.px)
+
+        horizontalLayout {
+            style {
+                width = 50.percent
+                flexWrap = "wrap"
+                alignItems = Alignment.Center
+                justifyContent = JustifyContent.Center
+            }
+            softwareTypeViewWithIcon("/public/img/desktop.png", "Desktop Apps")
+            softwareTypeViewWithIcon("/public/img/mobile.png", "Mobile Apps")
+            softwareTypeViewWithIcon("/public/img/website.png", "Websites")
+            softwareTypeViewWithIcon("/public/img/web.png", "Web Apps")
+            softwareTypeViewWithIcon("/public/img/game.png", "Game Development")
+        }
+        verticalFiller(50.px)
+        imageView {
+            style {
+                maxWidth = 70.percent
+            }
+            attributes["src"] = "/public/img/devices-suits.png"
+        }
+
+    }
+
+    private fun View.softwareTypeViewWithIcon(icon: String, title: String) = horizontalLayout {
+        style {
+            border = "1px solid ${AppColors.textDarkGrey}"
+            borderRadius = 8.px
+            margin = 16.px
+            padding = "8px 16px".dimen()
+            alignItems = Alignment.Center
+        }
+        imageView {
+            style {
+                width = 32.px
+                height = 32.px
+            }
+            attributes["src"] = icon
+        }
+        horizontalFiller(8.px)
+        textView {
+            style {
+                color = Color.white
+                fontSize = 16.px
+            }
+            text = title
+        }
     }
 
     private fun View.offerView(icon: String, title: String, description: String) = verticalLayout {
