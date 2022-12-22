@@ -108,6 +108,7 @@ class NarsiteLandingPage {
                     verticalFiller(200.px)
                     whatWeDoView()
                     suitsYourNeedsSection()
+                    ourWorkSection()
                 }
                 landingPageFooter()
             }
@@ -512,7 +513,48 @@ class NarsiteLandingPage {
             }
             attributes["src"] = "/public/img/devices-suits.png"
         }
+        verticalFiller(200.px)
 
+    }
+    private fun View.ourWorkSection() = verticalLayout {
+        style {
+            backgroundImage = "url(/public/img/global-back.png)"
+            width = matchParent
+            alignItems = Alignment.Center
+            backgroundSize = "cover"
+            backgroundRepeat = "no-repeat"
+            alignSelf = Alignment.Center
+        }
+        verticalFiller(200.px)
+        textView {
+            style {
+                fontSize = 32.px
+                fontWeight = "bold"
+                color = AppColors.white
+            }
+            text = "OUR WORK"
+        }
+
+        imageView {
+            style {
+                maxWidth = 30.percent
+            }
+            attributes["src"] = "/public/img/our-work-laptop.png"
+        }
+
+        verticalFiller(50.px)
+        textView {
+            style {
+                fontWeight = "300"
+                color = Color.white
+                maxWidth = 50.percent
+                textAlign = TextAlign.Center
+                fontSize = 18.px
+            }
+            text = "With more than 10 years experience in the mobile development industry, we promise that you will never need to search for apps developers ever again."
+        }
+
+        verticalFiller(200.px)
     }
 
     private fun View.softwareTypeViewWithIcon(icon: String, title: String) = horizontalLayout {
