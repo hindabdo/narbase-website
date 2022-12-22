@@ -516,16 +516,17 @@ class NarsiteLandingPage {
         verticalFiller(200.px)
 
     }
+
     private fun View.ourWorkSection() = verticalLayout {
         style {
             backgroundImage = "url(/public/img/global-back.png)"
             width = matchParent
             alignItems = Alignment.Center
-            backgroundSize = "cover"
+            backgroundSize = "100% auto"
             backgroundRepeat = "no-repeat"
             alignSelf = Alignment.Center
         }
-        verticalFiller(200.px)
+        verticalFiller(100.px)
         textView {
             style {
                 fontSize = 32.px
@@ -534,6 +535,7 @@ class NarsiteLandingPage {
             }
             text = "OUR WORK"
         }
+        verticalFiller(50.px)
 
         imageView {
             style {
@@ -551,11 +553,159 @@ class NarsiteLandingPage {
                 textAlign = TextAlign.Center
                 fontSize = 18.px
             }
-            text = "With more than 10 years experience in the mobile development industry, we promise that you will never need to search for apps developers ever again."
+            text =
+                "With more than 10 years experience in the mobile development industry, we promise that you will never need to search for apps developers ever again."
         }
 
+        verticalFiller(100.px)
+
+        projectsSection()
+    }
+
+    private fun View.projectsSection() = horizontalScrollLayout {
+        style {
+            width = matchParent
+        }
+        horizontalLayout {
+            projectView(
+                "Balsam Medico",
+                "Cloud-based, Modern, Clinic Management System that allows you to provide better services for patients.",
+                "/public/img/medico-white.png",
+                "/public/img/medico-screenshot.png"
+            )
+            projectView(
+                "CarApp",
+                "CarApp is the largest ride hailing \n" +
+                        "platform in West Africa. \n" +
+                        "With a huge Captains base, CarApp  provides reliable, safe and comfortable rides 24/7.",
+                "/public/img/carapp-white.png",
+                "/public/img/carapp-screenshot.png"
+            )
+            projectView(
+                "Balsam App",
+                "OROOMA  is  an  online  recruitment  platform  to bridge the gap between employers and future employees by providing both of them with powerful tools to achieve their goals",
+                "/public/img/orooma-white.png",
+                "/public/img/medico-screenshot.png"
+            )
+            projectView(
+                "Orooma",
+                "OROOMA  is  an  online  recruitment  platform  to bridge the gap between employers and future employees by providing both of them with powerful tools to achieve their goals",
+                "/public/img/orooma-white.png",
+                "/public/img/medico-screenshot.png"
+            )
+            projectView(
+                "Alburuj",
+                "Cloud-based, Modern, Clinic Management System that allows you to provide better services for patients.",
+                "/public/img/medico-white.png",
+                "/public/img/medico-screenshot.png"
+            )
+            projectView(
+                "Petrobash App",
+                "CarApp is the largest ride hailing \n" +
+                        "platform in West Africa. \n" +
+                        "With a huge Captains base, CarApp  provides reliable, safe and comfortable rides 24/7.",
+                "/public/img/carapp-white.png",
+                "/public/img/carapp-screenshot.png"
+            )
+            projectView(
+                "Orooma",
+                "OROOMA  is  an  online  recruitment  platform  to bridge the gap between employers and future employees by providing both of them with powerful tools to achieve their goals",
+                "/public/img/orooma-white.png",
+                "/public/img/medico-screenshot.png"
+            )
+        }
         verticalFiller(200.px)
     }
+
+    private fun View.projectView(title: String, description: String, icon: String, featuredScreenshot: String) =
+        horizontalLayout {
+            style {
+                backgroundColor = Color(48, 48, 48)
+                border = "1px solid ${AppColors.textDarkGrey}"
+                borderRadius = 8.px
+                width = 400.px
+                margin = 16.px
+                paddingBottom = 16.px
+            }
+            verticalLayout {
+                style {
+                    width = weightOf(2)
+                }
+                verticalFiller(16.px)
+                imageView {
+                    style {
+                        width = 80.px
+                        marginStart = 16.px
+                        opacity = 0.7
+                    }
+                    attributes["src"] = icon
+                }
+                verticalFiller(16.px)
+                textView {
+                    style {
+                        fontWeight = "bold"
+                        fontSize = 24.px
+                        color = Color.white
+                        marginStart = 16.px
+                    }
+                    text = title
+                }
+                verticalFiller(16.px)
+
+                view {
+                    style {
+                        width = 20.px
+                        backgroundColor = Color.white
+                        height = 2.px
+                        marginBottom = (-1).px
+                        marginStart = 16.px
+                    }
+                }
+                view {
+                    style {
+                        height = 1.px
+                        backgroundColor = AppColors.textDarkGrey
+                        width = matchParent
+                    }
+                }
+                verticalFiller(16.px)
+
+                textView {
+                    style {
+                        marginBottom = 16.px
+                        marginStart = 16.px
+                        color = AppColors.white
+                        fontSize = 14.px
+                        fontWeight = "300"
+                        width = matchParent
+                        textOverflow = "ellipsis"
+                        overflow = "hidden"
+                        display = "-webkit-box"
+                        this["-webkit-line-clamp"] = "3"
+                        this["-webkit-box-orient"] = "vertical"
+                    }
+                    text = description
+                }
+            }
+            linearLayout {
+                style {
+                    width = weightOf(1)
+                    backgroundImage = "url(/public/img/circle-back.png)"
+                    backgroundSize = "cover"
+                    justifyContent = JustifyContent.Center
+                    alignSelf = Alignment.Center
+                }
+
+                imageView {
+                    style {
+                        width = matchParent
+                        paddingStart = 16.px
+                    }
+                    attributes["src"] = featuredScreenshot
+                }
+            }
+
+        }
 
     private fun View.softwareTypeViewWithIcon(icon: String, title: String) = horizontalLayout {
         style {
