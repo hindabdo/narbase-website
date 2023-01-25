@@ -109,6 +109,7 @@ class NarsiteLandingPage {
                     whatWeDoView()
                     suitsYourNeedsSection()
                     ourWorkSection()
+                    balsamOneSection()
                 }
                 landingPageFooter()
             }
@@ -614,7 +615,7 @@ class NarsiteLandingPage {
                 "/public/img/medico-screenshot.png"
             )
         }
-        verticalFiller(200.px)
+        verticalFiller(500.px)
     }
 
     private fun View.projectView(title: String, description: String, icon: String, featuredScreenshot: String) =
@@ -776,6 +777,106 @@ class NarsiteLandingPage {
         }
     }
 
+    private fun View.balsamOneSection() = verticalLayout {
+        style {
+//            backgroundImage = "url(/public/img/balsam-one-background.png)"
+            width = matchParent
+            minHeight = 500.px
+            alignSelf = Alignment.Center
+            alignItems = Alignment.Center
+            backgroundSize = "100% 100%"
+            backgroundRepeat = "no-repeat"
+            alignContent = Alignment.Center
+        }
+
+        horizontalLayout {
+            style {
+                width = wrapContent
+                padding = 100.px
+                backgroundImage = "url(/public/img/balsam-text-background.png)"
+                backgroundSize = "contain"
+                backgroundRepeat = "no-repeat"
+            }
+            verticalLayout {
+
+                style {
+                    maxWidth = 30.vw
+                    alignSelf = Alignment.Center
+                }
+                imageView {
+                    style {
+                        width = 200.px
+                    }
+                    attributes["src"] = "/public/img/balsam-one.png"
+                }
+
+                verticalFiller(16.px)
+                textView {
+                    style {
+                        color = Color.white
+                        fontWeight = "bold"
+                        fontSize = 24.px
+                    }
+                    text = "OUR DIGITAL HEALTH \n" +
+                            "SOLUTION"
+                }
+
+                verticalFiller(16.px)
+                textView {
+                    style {
+                        color = Color.white
+                        fontWeight = "300"
+                    }
+                    text = "At Narbase, we envision that we will lead and innovate in the Digital Health sector in Sudan. Strategically, digital health will have an increasing importance to Sudan as it will help solve many problems for the Sudanese people. "
+                }
+                verticalFiller(32.px)
+
+                textView {
+                    style {
+                        padding = "4px 12px".dimen()
+                        borderRadius = 8.px
+                        backgroundColor = AppColors.balsamColor
+                        color = AppColors.narnicVeryDarkColor
+                        fontWeight = "bold"
+                    }
+                    text = "Learn more"
+                }
+            }
+
+            horizontalFiller(100.px)
+            verticalLayout {
+                style {
+                    alignSelf = Alignment.Center
+                    maxWidth = 30.vw
+                }
+                imageView {
+                    style {
+                        maxWidth = 40.vw
+                        alignSelf = Alignment.Center
+                    }
+                    attributes["src"] = "/public/img/balsam-one-website.png"
+                }
+                horizontalLayout {
+                    style {
+                        width = matchParent
+                    }
+                    numbersTextView("3K+")
+                    horizontalFiller(16.px)
+                    numbersTextView("32+")
+                    horizontalFiller(16.px)
+                    numbersTextView("120+")
+                    horizontalFiller(16.px)
+                    numbersTextView("50+")
+                }
+            }
+
+        }
+
+
+
+
+    }
+
     private fun LinearLayout.textWithGreyBackground(content: String) = textView {
         style {
             backgroundColor = AppColors.textDarkerGrey
@@ -786,6 +887,19 @@ class NarsiteLandingPage {
             paddingTop = 8.px
             borderRadius = 12.px
             animation = "up_down 3s linear infinite"
+        }
+        text = content
+    }
+    private fun LinearLayout.numbersTextView(content: String) = textView {
+        style {
+            color = AppColors.white
+            width = weightOf(1)
+            padding = "8px 16px".dimen()
+            border = "0.5px solid ${AppColors.borderColor}"
+            borderRadius = 8.px
+            textAlign = TextAlign.Center
+            fontSize = 24.px
+            fontWeight = "bold"
         }
         text = content
     }
