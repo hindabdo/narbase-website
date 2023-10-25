@@ -621,8 +621,8 @@ class NarsiteLandingPage {
     private fun View.projectView(title: String, description: String, icon: String, featuredScreenshot: String) =
         horizontalLayout {
             style {
-                backgroundColor = Color(48, 48, 48)
-                border = "1px solid ${AppColors.textDarkGrey}"
+                backgroundColor = Color(255, 255, 255, 0.06)
+                border = "1px solid ${AppColors.textDarkerGrey}"
                 borderRadius = 8.px
                 width = 400.px
                 margin = 16.px
